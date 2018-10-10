@@ -1,0 +1,13 @@
+function train(X, y, l1_p, l2_p)
+    
+    [num_rows, num_cols] = size(X)
+    l1_w = rand(num_rows, l1_p)
+    l2_w = rand(l1_p, l2_p)
+    
+    o_1 = sigmoid(X.' * l1_w)
+    
+    
+    
+    
+
+end

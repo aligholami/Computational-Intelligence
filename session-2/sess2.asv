@@ -1,0 +1,17 @@
+num_features = 2
+num_samples = 50
+num_classes = 5
+
+X = rand(num_features, num_samples)
+y = zeros(num_classes, num_samples)
+
+[num_rows, num_cols] = size(y)
+for row = num_rows
+    for col = num_cols
+        idx = randi([
+    
+    end
+end
+
+
+
