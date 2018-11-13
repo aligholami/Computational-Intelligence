@@ -1,9 +1,8 @@
-function [ output_args ] = custom_hopfield(num_iters, num_starts, target)
+function [ output_args ] = custom_hopfield(num_iters, target)
 
 [num_rows, num_cols] = size(target);
 
-
-hop_weights = ceil(rands(num_rows, num_cols));
+hop_weights = ceil(rands(num_cols, num_cols));
 
 % -1 on final rows and cols
 hop_weights(:, num_cols) = -1;
@@ -16,18 +15,17 @@ for row = 1:num_rows
     end
 end
 
-% Reshape the input and the weights
-new_shape = num_cols * num_rows;
-
-hop_weights = reshape(hop_weights, [new_shape, 1]);
-target = reshape(targets, [new_shape, 1]);
-
+converged_matrix = []
+ 
 for i = 1:num_iters
-   
-    nxt = hop_weights * 
-    
+    % Hop_weights is a matrix of    
+    nxt = target * hop_weights
+    nxt = sign(nxt)
+    target = nxt
+    converged_matrix = nxt
 end
 
+output_args = converged_matrix
 
 end
 
