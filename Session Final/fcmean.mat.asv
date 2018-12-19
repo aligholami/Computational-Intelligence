@@ -1,0 +1,16 @@
+function [centers] = fcmean(data, num_iters)
+
+# 
+V = zeros(2,c);
+    dist2 = zeros(1,c);
+    X = X';
+    for k = 1 : c
+        for j = 1 : 2
+             sum1 = sum ((U(k,:).^m).*X(j,:));
+             sum2 = sum(U(k,:).^m); 
+             V(k,j) = sum1./sum2;
+         end
+     end
+X = X';
+
+end
