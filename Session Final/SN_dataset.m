@@ -7,7 +7,10 @@ saveVarsMat = load('SN_dataset.mat');
 SocialNetworkAds = saveVarsMat.SocialNetworkAds; % <401x5 double> too many elements
 SocialNetworkAds = SocialNetworkAds(2:end, :)
 SocialNetworkAds = SocialNetworkAds(:, 2:end)
+SocialNetworkAds = SocialNetworkAds(1:20, 2:end)
 
 clear saveVarsMat;
-numberofClusters = 7;
-[center, U, obj_fcn] = fcm(SocialNetworkAds, numberofClusters);
+num_clusters = 7;
+num_iters = 5;
+[centers] = fcmean(SocialNetworkAds, num_iters, num_clusters)
+% [center, U, obj_fcn] = fcm(SocialNetworkAds, numberofClusters);
